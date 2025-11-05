@@ -391,44 +391,8 @@ window.addEventListener('load', () => {
         loader.style.opacity = '0';
         setTimeout(() => loader.remove(), 500);
     }, 1000);
-});     
-        const dataStr = JSON.stringify(data, null, 2);
-        const blob = new Blob([dataStr], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'pfo-resolution-2250-data.json';
-        a.click();
-        URL.revokeObjectURL(url);
-        
-        // Show success message
-        const message = document.createElement('div');
-        message.textContent = 'Data exported successfully!';
-        message.style.cssText = `
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            background: var(--peace-green);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 9999;
-            animation: slideInRight 0.3s ease;
-        `;
-        document.body.appendChild(message);
-        
-        setTimeout(() => {
-            message.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => message.remove(), 300);
-        }, 3000);
-    });
-    
-    document.body.appendChild(exportBtn);
-};
-
-addExportButton();
-
+});           
+       
 // Add slide in/out animations
 const animations = document.createElement('style');
 animations.textContent = `
