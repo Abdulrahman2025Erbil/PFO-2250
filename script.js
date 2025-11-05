@@ -391,46 +391,7 @@ window.addEventListener('load', () => {
         loader.style.opacity = '0';
         setTimeout(() => loader.remove(), 500);
     }, 1000);
-});
-
-// Add data export functionality
-const addExportButton = () => {
-    const exportBtn = document.createElement('button');
-    exportBtn.innerHTML = '<i class="fas fa-download"></i> Export Data';
-    exportBtn.className = 'btn btn-secondary export-btn';
-    exportBtn.style.cssText = `
-        position: fixed;
-        bottom: 10rem;
-        right: 2rem;
-        z-index: 997;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    `;
-    
-    exportBtn.addEventListener('click', () => {
-        const data = {
-            organization: "Peace and Freedom Organization",
-            resolution: "UN Security Council Resolution 2250",
-            levels: ["International", "Regional", "National"],
-            international_memberships: [
-                "Civil Society Working Group on Youth, Peace and Security",
-                "United Network of Young Peacebuilders",
-                "Italian Youth, Peace and Security Network"
-            ],
-            regional_role: "MENA Regional Coalition Program Committee Lead",
-            national_achievements: [
-                "National Coalition for Youth, Peace and Security in Iraq (2020)",
-                "National Network for Resolution 2250 in Iraq (2021)",
-                "Drafting Iraq's First National Action Plan on YPS (2024-present)"
-            ],
-            key_partnerships: [
-                "UNFPA",
-                "Folke Bernadotte Academy",
-                "Iraqi Ministry of Youth and Sports",
-                "Ministry of Youth and Culture in Kurdistan Region",
-                "Prime Minister's Office of Iraq"
-            ]
-        };
-        
+});     
         const dataStr = JSON.stringify(data, null, 2);
         const blob = new Blob([dataStr], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
