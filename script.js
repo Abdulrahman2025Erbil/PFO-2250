@@ -391,8 +391,8 @@ window.addEventListener('load', () => {
         loader.style.opacity = '0';
         setTimeout(() => loader.remove(), 500);
     }, 1000);
-});           
-       
+});
+
 // Add slide in/out animations
 const animations = document.createElement('style');
 animations.textContent = `
